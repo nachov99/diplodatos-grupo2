@@ -1,34 +1,52 @@
 # Diplodatos - mentoria
 
-## Definicion de variables
+## Setup de notebooks
+1) Crear un entorno virtual:
+```
+virtualenv env
+```
+2) Inicializar entorno virtual:
+```
+linux & macos: source env/bin/activate
+windows: .\env\Scripts\activate
+```
+3) Instalar paquetes necesarios:
+```
+pip install -r requirements.txt
+```
+4) Si creaste un entorno virtual:
+```
+python3 -m ipykernel install --user --name=python3
+```
+5) Correr Jupyter Lab:
+```
+jupyter-lab
+```
 
-1 - age (numeric)
-2 - job : type of job (categorical: 'admin.','blue-collar','entrepreneur','housemaid','management','retired','self-employed','services','student','technician','unemployed','unknown')
-3 - marital : marital status (categorical: 'divorced','married','single','unknown'; note: 'divorced' means divorced or widowed)
-4 - education (categorical: 'basic.4y','basic.6y','basic.9y','high.school','illiterate','professional.course','university.degree','unknown')
-5 - default: has credit in default? (categorical: 'no','yes','unknown')
-6 - housing: has housing loan? (categorical: 'no','yes','unknown')
-7 - loan: has personal loan? (categorical: 'no','yes','unknown')
+## Descripción
+El dataset se basa en una campaña de marketing de un banco de Portugal. Consiste en llamadas telefónicas a clientes para que adquieran un depósito de plazo fijo. \
 
+El objetivo consiste en predecir si el cliente va a adquirir el producto o no (clasificación binaria). Este es un problema muy interesante ya que la mayoría de las empresas hacen campañas de marketing directo y necesitan saber cuáles son los clientes más propensos a adquirir los productos que ofrece. \
 
-**related with the last contact of the current campaign:**
-8 - contact: contact communication type (categorical: 'cellular','telephone')
-9 - month: last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')
-10 - day_of_week: last contact day of the week (categorical: 'mon','tue','wed','thu','fri')
-11 - duration: last contact duration, in seconds (numeric). Important note: this attribute highly affects the output target (e.g., if duration=0 then y='no'). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
+## Este tema es interesante porque...
+El tema es interesante porque podremos ver cómo podemos usar Data Science para poder resolver un problema real de negocios. Parecería que es un problema simple de clasificación, sin embargo, existen muchas sutilezas que van a hacer que resolvamos el problema de forma adecuada o no. \
 
-**other attributes:**
-12 - campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
-13 - pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)
-14 - previous: number of contacts performed before this campaign and for this client (numeric)
-15 - poutcome: outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')
+Otra razón interesante es que partiremos de un dataset crudo y veremos de punta a punta cómo abordar este problema, tanto desde el punto de vista de ciencia de datos como del punto de vista de negocios: veremos cómo obtener las mejores métricas posibles y también evaluaremos cómo presentar los resultados a nuestro potencial cliente. \
 
-**social and economic context attributes**
-16 - emp.var.rate: employment variation rate - quarterly indicator (numeric)
-17 - cons.price.idx: consumer price index - monthly indicator (numeric)
-18 - cons.conf.idx: consumer confidence index - monthly indicator (numeric)
-19 - euribor3m: euribor 3 month rate - daily indicator (numeric)
-20 - nr.employed: number of employees - quarterly indicator (numeric)
+## Trataremos de responder algunas de las siguientes preguntas
+¿Cómo impactan las variables demográficas en la adquisición de los plazo fijo?
 
-Output variable (desired target):
-21 - y - has the client subscribed a term deposit? (binary: 'yes','no')
+¿Hay desbalance de clases? ¿Cómo puede solucionarse?
+
+¿Qué métricas podemos utilizar? ¿Qué métricas podemos mostrar al banco de modo que comprenda el resultado obtenido?
+
+¿Logramos encontrar algún insight que pueda serle útil al banco?
+
+¿Cuáles son las features que más impactan en la obtención de un plazo fijo?
+
+## Los datos
+Si querés inspeccionar el conjunto de datos, lo encontrarás en el repositorio UCI:
+
+https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
+
+Utilizaremos el archivo más completo: bank-additional-full.csv, consiste en alrededor de 40.000 llamadas realizadas a clientes del banco (algunas llamadas son hacia el mismo cliente pero en otro momento).
