@@ -2,7 +2,7 @@ artifact_uri: file:///home/nacho/diplodatos-grupo2/mlruns/1/2b5e7cfd13ca429dba2d
 end_time: 1632413874223
 entry_point_name: ''
 experiment_id: '1'
-lifecycle_stage: active
+lifecycle_stage: deleted
 name: ''
 run_id: 2b5e7cfd13ca429dba2ddcdbedf83372
 run_uuid: 2b5e7cfd13ca429dba2ddcdbedf83372

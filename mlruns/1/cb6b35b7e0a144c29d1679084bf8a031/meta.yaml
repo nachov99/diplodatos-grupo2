@@ -1,0 +1,15 @@
+artifact_uri: file:///home/nacho/diplodatos-grupo2/mlruns/1/cb6b35b7e0a144c29d1679084bf8a031/artifacts
+end_time: 1634862046727
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: deleted
+name: ''
+run_id: cb6b35b7e0a144c29d1679084bf8a031
+run_uuid: cb6b35b7e0a144c29d1679084bf8a031
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1634862046384
+status: 3
+tags: []
+user_id: nacho
